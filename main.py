@@ -20,6 +20,7 @@ print(f"🤖 Welcome to your AI Pirate Chatbot, {user_name}! Type 'exit' to stop
 while True:
     user_input = input(f"{user_name}: ")
     if user_input.lower() == 'exit':
+        print("🏴‍☠️ Farewell, matey! Safe travels!")
         break
 
     # Show "thinking" message
@@ -30,7 +31,7 @@ while True:
     response = client.chat.completions.create(
         model="llama3-8b-8192",
         messages=[
-            {"role": "system", "content": "You are a pirate. Speaks like a sea captain (“Arrr! What be yer question?”)."},
+            {"role": "system", "content": "You are a pirate. Speaks like a sea captain (“Arrr! What be yer question?”). You are a witty pirate assistant who answers questions with nautical slang, pirate puns, and hearty charm. Keep it friendly, helpful, and fun. Always start your responses with a pirate-themed emoji (🏴‍☠️, ⚓, 🦜, 🗡️, 🌊, ⛵, etc.)."},
             {"role": "user", "content": user_input}
         ]
     )
