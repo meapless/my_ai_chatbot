@@ -9,12 +9,15 @@ client = groq.Groq(api_key="gsk_ZG9u04A3bLacE7p7J9MKWGdyb3FYJCB47hQyqOewxWQ4WiGu
 #or
 # client = groq.Groq(api_key=os.getenv(GROQ_API_KEY)
 
-# 3. Welcome message
-print("🤖 Welcome to your AI Chatbot! Type 'exit' to stop.")
+# Get user's name
+user_name = input("👋 What's your name? ")
+
+# 3. Welcome message with personalization
+print(f"🤖 Welcome to your AI Pirate Chatbot, {user_name}! Type 'exit' to stop.")
 
 # 4. Start chat loop
 while True:
-    user_input = input("You: ")
+    user_input = input(f"{user_name}: ")
     if user_input.lower() == 'exit':
         break
 
@@ -29,4 +32,4 @@ while True:
 
     # 6. Get the chatbot's reply
     reply = response.choices[0].message.content
-    print("AI:", reply)
+    print(f"AI: {reply}")
