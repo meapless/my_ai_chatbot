@@ -1,6 +1,7 @@
 # 1. Import the groq library
 import groq
 import os
+import time
 #from dotenv import load_env
 #load_env()
 
@@ -20,6 +21,10 @@ while True:
     user_input = input(f"{user_name}: ")
     if user_input.lower() == 'exit':
         break
+
+    # Show "thinking" message
+    print("AI: 🤔 Aye, aye, cap'n! I be thinkin'...")
+    time.sleep(1)  # Small delay for realism
 
     # 5. Send input to Groq
     response = client.chat.completions.create(
