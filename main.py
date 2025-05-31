@@ -2,13 +2,11 @@
 import groq
 import os
 import time
-#from dotenv import load_env
-#load_env()
+from dotenv import load_dotenv
+load_dotenv()
 
 # 2. Paste your API key (between the quotes)
-client = groq.Groq(api_key="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")
-#or
-# client = groq.Groq(api_key=os.getenv(GROQ_API_KEY)
+client = groq.Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 # Get user's name
 user_name = input("👋 What's your name? ")
